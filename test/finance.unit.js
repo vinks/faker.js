@@ -222,7 +222,7 @@ describe('finance.js', function () {
     describe("bitcoinAddress()", function(){
         it("returns a random bitcoin address", function(){
             var bitcoinAddress = faker.finance.bitcoinAddress();
-            
+
             assert.ok(bitcoinAddress.match(/^[A-Z0-9.]{27,34}$/));
         });
     });
@@ -230,7 +230,7 @@ describe('finance.js', function () {
     describe("ethereumAddress()", function(){
         it("returns a random ethereum address", function(){
             var ethereumAddress = faker.finance.ethereumAddress();
-            
+
             assert.ok(ethereumAddress.match(/^(0x)[0-9a-f]{40}$/i));
         });
     });
@@ -253,5 +253,45 @@ describe('finance.js', function () {
 
             assert.ok(bic.match(expr));
         });
+    });
+
+    describe("innfl()", function(){
+      it("returns a random individual person inn", function(){
+        var innfl = faker.finance.innfl();
+
+        assert.ok(innfl.match(/^[0-9]{12}$/));
+      });
+    });
+
+    describe("innul()", function(){
+      it("returns a random company inn", function(){
+        var innul = faker.finance.innul();
+
+        assert.ok(innul.match(/^[0-9]{10}$/));
+      });
+    });
+
+    describe("ogrn()", function(){
+      it("returns a random company ogrn", function(){
+        var ogrn = faker.finance.ogrn();
+
+        assert.ok(ogrn.match(/^[0-9]{13}$/));
+      });
+    });
+
+    describe("kpp()", function(){
+      it("returns a random company kpp", function(){
+        var kpp = faker.finance.kpp();
+
+        assert.ok(kpp.match(/^[0-9]{9}$/));
+      });
+    });
+
+    describe("snils()", function(){
+      it("returns a random snils", function(){
+        var snils = faker.finance.snils();
+
+        assert.ok(snils.match(/^[0-9]{11}$/));
+      });
     });
 });
